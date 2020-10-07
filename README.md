@@ -7,7 +7,7 @@
 
 # Resume Parser
 
-This repo hosts the AWS Lambda function for querying Lever's resume parsing API (as a bonus, it was written using AWS Cloud9). 
+This repo hosts the AWS Lambda function for querying Lever's resume parsing API (as a bonus, it was written using AWS Cloud9). The REST API to query the function was set up using AWS API Gateway
 
 While the Lever API is (probably unintentionally) public, it implements strict CORS. This lambda function is used as a proxy to facilitate server-to-server communication.
 
