@@ -1,0 +1,7 @@
+{
+    "queryParser": {
+        "lambda": {
+            "body": "test"
+        }
+    }
+}
