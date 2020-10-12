@@ -5,10 +5,11 @@
      /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
  ----------------------------------------------------------------- 
 
+# Resume Parser
 
-Hi there! Welcome to AWS Cloud9!
+This repo hosts the AWS Lambda function for querying Lever's resume parsing API (as a bonus, it was written using AWS Cloud9). The REST API to query the function was set up using AWS API Gateway
 
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
+While the Lever API is (probably unintentionally) public, it implements strict CORS. This lambda function is used as a proxy to facilitate server-to-server communication.
 
-Happy coding!
+You can view a live demo [here](https://itsjafer.com/#/parser).
+
