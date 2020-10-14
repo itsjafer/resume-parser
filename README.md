@@ -13,3 +13,9 @@ While the Lever API is (probably unintentionally) public, it implements strict C
 
 You can view a live demo [here](https://itsjafer.com/#/parser).
 
+## How does this work?
+
+Lever.co is a popular recruiting platform used by many companies. As job applicants, we often encounter Lever when applying for jobs. When applying to a job posting powered by Lever, if you pay attention to the network requests being made, you'll notice that a call to an internal Lever API is made. In particular, a post request is made to `https://jobs.lever.co/parseResume` which parses the resume through Lever's backend. My website is simply a front-end that displays the results of the parse in an easy-to-digest manner.
+
+![diagram](overview.jpg)
+
