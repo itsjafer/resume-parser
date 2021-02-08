@@ -4,6 +4,8 @@
       / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
      /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
  ----------------------------------------------------------------- 
+# Update: this project is no longer functional
+Unfortunately, Lever's API has been made private and is no longer exposed for public use. It was fun while it lasted!
 
 # Resume Parser
 
