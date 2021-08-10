@@ -5,7 +5,7 @@ This repo hosts the Google Cloud function for querying Lever's resume parsing AP
 
 While the Lever API is (probably unintentionally) public, it implements strict CORS. This lambda function is used as a proxy to facilitate server-to-server communication.
 
-You can view a live demo [here](https://itsjafer.com/#/parser).
+You can view a live demo [here](https://itsjafer.com/#/parser) which calls this cloud function (whose trigger URL is `https://us-central1-resume-parser-322517.cloudfunctions.net/parseResume-1`)
 
 ## How does this work?
 
