@@ -10,7 +10,15 @@ def lambda_handler(event, context):
     resume = b64decode(body['content'])
     
     # ask Lever to parse our resume
-    parseResponse = requests.post('https://jobs.lever.co/parseResume', files=dict(resume=resume))
+    headers = {
+        'Referer': 'https://jobs.lever.co/',
+        'Origin': 'https://jobs.lever.co/'
+    }
+    parseResponse = requests.post(
+        'https://jobs.lever.co/parseResume', 
+        files=dict(resume=resume),
+        headers=headers
+    )
     
     # return a response for API gateway
     response = {
@@ -22,5 +30,5 @@ def lambda_handler(event, context):
             "Access-Control-Allow-Methods": "POST"
         },
         "body": json.dumps(parseResponse.json())
-    };
+    }
     return response
