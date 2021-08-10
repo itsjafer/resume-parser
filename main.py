@@ -13,11 +13,11 @@ def handler(request):
     """
     # CORS response
     if request.method == 'OPTIONS':
-        # Allows POST requests from itsjafer origin with the Content-Type
+        # Allows GET requests from any origin with the Content-Type
         # header and caches preflight response for an 3600s
         headers = {
-            'Access-Control-Allow-Origin': 'https://itsjafer.com',
-            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET',
             'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Max-Age': '3600'
         }
