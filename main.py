@@ -41,7 +41,7 @@ def handler(request):
     )
 
     response = {
-        "success": "true" 
+        "body": json.dumps(parseResponse.json()) 
     }
 
     # Set CORS headers for the main request
