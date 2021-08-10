@@ -17,7 +17,7 @@ def handler(request):
         # header and caches preflight response for an 3600s
         headers = {
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Methods': '*',
             'Access-Control-Allow-Headers': 'Content-Type',
             'Access-Control-Max-Age': '3600'
         }
@@ -46,7 +46,7 @@ def handler(request):
 
     # Set CORS headers for the main request
     responseHeaders = {
-        'Access-Control-Allow-Origin': 'https://itsjafer.com'
+        'Access-Control-Allow-Origin': '*'
     }
 
     return (json.dumps(response, default=str), 200, responseHeaders)
