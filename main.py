@@ -13,11 +13,12 @@ def handler(request):
     """
     # Set CORS headers for the preflight request
     if request.method == 'OPTIONS':
+        print(request.method)
         # Allows GET requests from any origin with the Content-Type
         # header and caches preflight response for an 3600s
         headers = {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+            'Access-Control-Allow-Origin': 'https://itsjafer.com',
+            'Access-Control-Allow-Methods': 'GET',
             'Access-Control-Allow-Headers': 'Content-Type'
         }
 
@@ -26,7 +27,7 @@ def handler(request):
     # Set CORS headers for the main request
     responseHeaders = {
         'Access-Control-Allow-Methods': 'POST,GET',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': 'https://itsjafer.com'
     }
 
     # Get the request body
