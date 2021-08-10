@@ -46,7 +46,8 @@ def handler(request):
 
     # Set CORS headers for the main request
     responseHeaders = {
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': '*'
     }
 
     return (json.dumps(response, default=str), 200, responseHeaders)
