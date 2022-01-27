@@ -1,6 +1,8 @@
 import requests
 import json
+import random
 from base64 import b64decode
+from lxml import html
 
 def handler(request):
     """Responds to any HTTP request.
@@ -36,14 +38,37 @@ def handler(request):
     # decode the resume from base64
     resume = b64decode(request_json['content'])
 
+    # pick a random job posting
+    # (lever's demo API has ~350 postings)
+    postingSkip = random.randint(1,350)
+
+    # get information about this posting
+    postingInfo = requests.get(
+        f'https://api.lever.co/v0/postings/leverdemo?skip={postingSkip}&limit=1&mode=json'
+    )
+
+    # get the URL for this posting
+    postingURL = postingInfo.json()[0]['applyUrl']
+
+    # get CSRF token and posting ID from the posting
+    posting = requests.get(postingURL)
+    root = html.fromstring(posting.text)
+    csrf = root.get_element_by_id("csrf-token").get('value')
+    postingID = root.get_element_by_id("posting-id").get('value')
+
     # ask Lever to parse our resume
     headers = {
         'Referer': 'https://jobs.lever.co/',
         'Origin': 'https://jobs.lever.co/'
     }
+
     parseResponse = requests.post(
         'https://jobs.lever.co/parseResume', 
-        files=dict(resume=resume),
+        files=dict(
+            resume=('resume.pdf', resume),
+            csrf=(None,csrf),
+            postingId=(None,postingID)
+            ),
         headers=headers
     )
 
