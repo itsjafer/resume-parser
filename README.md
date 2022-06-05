@@ -1,6 +1,8 @@
 
 # Resume Parser
 
+**Update**: The API that this project used has been obfuscated and therefore this tool is no longer functional. :(
+
 This repo hosts the Google Cloud function for querying Lever's resume parsing API.
 
 While the Lever API is (probably unintentionally) public, it implements strict CORS. This lambda function is used as a proxy to facilitate server-to-server communication.
